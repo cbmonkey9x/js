@@ -1,6 +1,6 @@
     //<![CDATA[
-    $('#gmag-pro-main-menu').menuify();
-$('#gmag-pro-main-menu .widget').addClass('show-menu');
+$('#cb-monkey-main-menu').menuify();
+$('#cb-monkey-main-menu .widget').addClass('show-menu');
 $('.search-toggle').on('click', function () {
     $('body').toggleClass('search-active')
 });
@@ -23,31 +23,31 @@ $('.post-body strike').each(function () {
     var $t = $(this),
         $mtc = $t.text().trim();
     if ($mtc == '$ads={1}') {
-        $t.replaceWith('<div id="gmag-pro-new-before-ad"/>')
+        $t.replaceWith('<div id="cb-monkey-new-before-ad"/>')
     }
     if ($mtc == '$ads={2}') {
-        $t.replaceWith('<div id="gmag-pro-new-after-ad"/>')
+        $t.replaceWith('<div id="cb-monkey-new-after-ad"/>')
     }
 });
-$('#gmag-pro-new-before-ad').each(function () {
+$('#cb-monkey-new-before-ad').each(function () {
     var $t = $(this);
     if ($t.length) {
         $('#before-ad').appendTo($t)
     }
 });
-$('#gmag-pro-new-after-ad').each(function () {
+$('#cb-monkey-new-after-ad').each(function () {
     var $t = $(this);
     if ($t.length) {
         $('#after-ad').appendTo($t)
     }
 });
-$('#gmag-pro-main-before-ad .widget').each(function () {
+$('#cb-monkey-main-before-ad .widget').each(function () {
     var $t = $(this);
     if ($t.length) {
         $t.appendTo($('#before-ad'))
     }
 });
-$('#gmag-pro-main-after-ad .widget').each(function () {
+$('#cb-monkey-main-after-ad .widget').each(function () {
     var $t = $(this);
     if ($t.length) {
         $t.appendTo($('#after-ad'))
@@ -118,7 +118,7 @@ $('.post-body strike').each(function () {
         }
     })
 });
-$('.gmag-pro-share-links .window-ify,.entry-share .window-ify').on('click', function () {
+$('.cb-monkey-share-links .window-ify,.entry-share .window-ify').on('click', function () {
     var $this = $(this),
         url = $this.data('url'),
         wid = $this.data('width'),
@@ -130,7 +130,7 @@ $('.gmag-pro-share-links .window-ify,.entry-share .window-ify').on('click', func
         win = window.open(url, '_blank', 'scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=' + wid + ',height=' + hei + ',left=' + mrl + ',top=' + mrt);
     win.focus()
 });
-$('.gmag-pro-share-links').each(function () {
+$('.cb-monkey-share-links').each(function () {
     var $t = $(this),
         $b = $t.find('.show-hid a');
     $b.on('click', function () {
@@ -198,7 +198,7 @@ function getPostAuthor(feed, i) {
         b = messages.postAuthorLabel,
         e = '';
     if (b != '') {
-        e = '<span class="by">' + b + '</span>'
+        e = '<i class="fas fa-user-shield"></i> '
     } else {
         e = ''
     }
@@ -421,7 +421,7 @@ function getAjax($this, type, num, label, color) {
                             content += '<article class="grid-item item-' + i + '"><div class="entry-image"><a class="entry-image-link" href="' + link + '"><span class="entry-thumb" data-image="' + image + '"/></a></div><div class="entry-header"><h2 class="entry-title"><a href="' + link + '">' + title + '</a></h2>' + meta[1] + '</div></article>';
                             break;
                         case 'grid2':
-                            content += '<article class="grid-item item-' + i + '"><div class="entry-image">' + tag + '<a class="entry-image-link" href="' + link + '"><span class="entry-thumb" data-image="' + image + '"/></a></div><div class="entry-header"><h2 class="entry-title"><a href="' + link + '">' + title + '</a></h2>' + meta[0] + '</div></article>';
+                            content += '<article class="grid-item item-' + i + '"><div class="entry-image"><a class="entry-image-link" href="' + link + '"><span class="entry-thumb" data-image="' + image + '"/></a></div><div class="entry-header"><h2 class="entry-title"><a href="' + link + '">' + title + '</a></h2>' + meta[0] + '</div></article>';
                             break;
                         case 'videos':
                             switch (i) {
@@ -436,7 +436,7 @@ function getAjax($this, type, num, label, color) {
                         case 'gallery':
                             switch (i) {
                             case 0:
-                                content += '<article class="gallery-item item-' + i + '"><div class="gallery-inner">' + tag + '<a class="entry-image-link before-mask" href="' + link + '"><span class="entry-thumb" data-image="' + image + '"/><span class="gallery-icon"/></a><div class="entry-header entry-info"><h2 class="entry-title"><a href="' + link + '">' + title + '</a></h2>' + meta[0] + '</div></div></article>';
+                                content += '<article class="gallery-item item-' + i + '"><div class="gallery-inner"><span class="entry-category">Gallery Image</span><a class="entry-image-link before-mask" href="' + link + '"><span class="entry-thumb" data-image="' + image + '"/><span class="gallery-icon"/></a><div class="entry-header entry-info"><h2 class="entry-title"><a href="' + link + '">' + title + '</a></h2>' + meta[0] + '</div></div></article>';
                                 break;
                             default:
                                 content += '<article class="gallery-item item-' + i + '"><div class="gallery-inner"><a class="entry-image-link before-mask" href="' + link + '"><span class="entry-thumb" data-image="' + image + '"/><span class="gallery-icon"/></a><div class="entry-header entry-info"><h2 class="entry-title"><a href="' + link + '">' + title + '</a></h2></div></div></article>';
@@ -619,7 +619,7 @@ function megaTabs($this, type, label, mtc) {
         }
     }
 }
-$('#gmag-pro-main-menu li').each(function (type, label) {
+$('#cb-monkey-main-menu li').each(function (type, label) {
     var lc = $(this),
         $this = lc,
         ltx = lc.find('a'),
@@ -658,7 +658,7 @@ $('#featured .HTML .widget-content').each(function (type, num, label, color) {
     }
     ajaxFeatured($this, type, num, label, mtc, color)
 });
-$('.gmag-pro-content-blocks .HTML .widget-content').each(function (type, num, label, color) {
+$('.cb-monkey-content-blocks .HTML .widget-content').each(function (type, num, label, color) {
     var $this = $(this),
         txt = $this.text().trim(),
         mtc = txt.toLowerCase();
@@ -668,7 +668,7 @@ $('.gmag-pro-content-blocks .HTML .widget-content').each(function (type, num, la
     color = shortCodeIfy(txt, 'color');
     ajaxBlock($this, type, num, label, mtc, color)
 });
-$('.gmag-pro-widget-ready .HTML .widget-content').each(function (type, num, label) {
+$('.cb-monkey-widget-ready .HTML .widget-content').each(function (type, num, label) {
     var $this = $(this),
         txt = $this.text().trim(),
         mtc = txt.toLowerCase();
@@ -677,13 +677,13 @@ $('.gmag-pro-widget-ready .HTML .widget-content').each(function (type, num, labe
     label = shortCodeIfy(txt, 'label');
     ajaxWidget($this, type, num, label, mtc)
 });
-$('.gmag-pro-related-content').each(function () {
+$('.cb-monkey-related-content').each(function () {
     var $this = $(this),
         label = $this.find('.related-tag').attr('data-label'),
         num = relatedPostsNum;
     ajaxRelated($this, 'related', num, label, 'getrelated')
 });
-$('.gmag-pro-blog-post-comments').each(function () {
+$('.cb-monkey-blog-post-comments').each(function () {
     var $this = $(this),
         system = commentsSystem,
         facebook = '<div class="fb-comments" data-width="100%" data-href="' + disqus_blogger_current_url + '" order_by="time" data-colorscheme="' + fbCommentsTheme + '" data-numposts="5"></div>',
@@ -725,9 +725,9 @@ $(function () {
         $l.find('#h1-tag').remove();
         $l.appendTo($t)
     });
-    $('#gmag-pro-mobile-menu').each(function () {
+    $('#cb-monkey-mobile-menu').each(function () {
         var $t = $(this),
-            $m = $('#gmag-pro-main-menu-nav').clone();
+            $m = $('#cb-monkey-main-menu-nav').clone();
         $m.attr('id', 'main-mobile-nav');
         $m.find('.mega-widget, .mega-tab').remove();
         $m.find('li.mega-tabs .complex-tabs').each(function () {
@@ -750,13 +750,13 @@ $(function () {
             $a.attr('href', '/search/label/' + $l)
         });
         $m.appendTo($t);
-        $('.show-gmag-pro-mobile-menu, .hide-gmag-pro-mobile-menu, .overlay').on('click', function () {
+        $('.show-cb-monkey-mobile-menu, .hide-cb-monkey-mobile-menu, .overlay').on('click', function () {
             $('body').toggleClass('nav-active')
         });
-        $('.gmag-pro-mobile-menu .has-sub').append('<div class="submenu-toggle"/>');
-        $('.gmag-pro-mobile-menu .mega-menu').find('.submenu-toggle').remove();
-        $('.gmag-pro-mobile-menu .mega-tabs').append('<div class="submenu-toggle"/>');
-        $('.gmag-pro-mobile-menu ul li .submenu-toggle').on('click', function ($this) {
+        $('.cb-monkey-mobile-menu .has-sub').append('<div class="submenu-toggle"/>');
+        $('.cb-monkey-mobile-menu .mega-menu').find('.submenu-toggle').remove();
+        $('.cb-monkey-mobile-menu .mega-tabs').append('<div class="submenu-toggle"/>');
+        $('.cb-monkey-mobile-menu ul li .submenu-toggle').on('click', function ($this) {
             if ($(this).parent().hasClass('has-sub')) {
                 $this.preventDefault();
                 if (!$(this).parent().hasClass('show')) {
@@ -772,7 +772,7 @@ $(function () {
             $l = $('#main-navbar-social ul.social').clone();
         $l.appendTo($t)
     });
-    $('#gmag-pro-header-wrapper .headerify').each(function () {
+    $('#cb-monkey-header-wrapper .headerify').each(function () {
         var $this = $(this);
         if (fixedMenu == true) {
             if ($this.length > 0) {
@@ -826,25 +826,25 @@ $(function () {
         $t.replaceText(/(https:\/\/\S+(\.png|\.jpeg|\.jpg|\.gif))/g, '<img src="$1"/>');
         $t.replaceText(/(?:https:\/\/)?(?:www\.)?(?:youtube\.com)\/(?:watch\?v=)?(.+)/g, '<div class="responsive-video-wrap"><iframe id="youtube" width="100%" height="358" src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
     });
-    $('#gmag-pro-load-more-link').each(function () {
+    $('#cb-monkey-load-more-link').each(function () {
         var $this = $(this),
             $loadLink = $this.data('load');
         if ($loadLink) {
-            $('#gmag-pro-load-more-link').show()
+            $('#cb-monkey-load-more-link').show()
         }
-        $('#gmag-pro-load-more-link').on('click', function (a) {
-            $('#gmag-pro-load-more-link').hide();
+        $('#cb-monkey-load-more-link').on('click', function (a) {
+            $('#cb-monkey-load-more-link').hide();
             $.ajax({
                 url: $loadLink,
                 success: function (data) {
                     var $p = $(data).find('.blog-posts');
                     $p.find('.index-post').addClass('post-animated post-fadeInUp');
                     $('.blog-posts').append($p.html());
-                    $loadLink = $(data).find('#gmag-pro-load-more-link').data('load');
+                    $loadLink = $(data).find('#cb-monkey-load-more-link').data('load');
                     if ($loadLink) {
-                        $('#gmag-pro-load-more-link').show()
+                        $('#cb-monkey-load-more-link').show()
                     } else {
-                        $('#gmag-pro-load-more-link').hide();
+                        $('#cb-monkey-load-more-link').hide();
                         $('#blog-pager .no-more').addClass('show')
                     }
                     $('.index-post .entry-image-link .entry-thumb').lazyify()
