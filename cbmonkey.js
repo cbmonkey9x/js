@@ -1,4 +1,4 @@
-    //<![CDATA[
+
 $('#cb-monkey-main-menu').menuify();
 $('#cb-monkey-main-menu .widget').addClass('show-menu');
 $('.search-toggle').on('click', function () {
@@ -871,4 +871,4 @@ $(function () {
         })
     })
 });
-//]]>
+
